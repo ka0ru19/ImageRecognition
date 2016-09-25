@@ -1,25 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UUk-r6-ecO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="wIg-WH-Qek">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UUk-r6-ecO" customClass="ViewController" customModule="ImageRecogination" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Oiy-8a-F4A"/>
+                        <viewControllerLayoutGuide type="bottom" id="nJB-yD-cAY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="N0H-4K-ZfF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-WK-xzQ">
+                                <rect key="frame" x="38" y="28" width="299" height="615"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sV8-4z-peZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="299" height="400"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aDg-Bo-Or1">
+                                        <rect key="frame" x="0.0" y="410" width="299" height="165"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Q4E-L4-zZE">
+                                        <rect key="frame" x="0.0" y="585" width="299" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Rc-nKk">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="OOL-16-5zq"/>
+                                                    <constraint firstAttribute="width" constant="140" id="ql4-Nv-COs"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mtv-k0-hO2">
+                                                <rect key="frame" x="140" y="0.0" width="19" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6l-Fi-p0C">
+                                                <rect key="frame" x="159" y="0.0" width="140" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="ke6-9F-1A1"/>
+                                                    <constraint firstAttribute="height" constant="30" id="pYR-pa-FVF"/>
+                                                </constraints>
+                                                <state key="normal" title="アルバム"/>
+                                                <connections>
+                                                    <action selector="onTappedAlbumButton:" destination="UUk-r6-ecO" eventType="touchUpInside" id="U1R-o3-4KC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="J6l-Fi-p0C" secondAttribute="bottom" id="G9g-qW-iX1"/>
+                                            <constraint firstAttribute="bottom" secondItem="SbG-Rc-nKk" secondAttribute="bottom" id="J9d-sZ-xhD"/>
+                                            <constraint firstItem="SbG-Rc-nKk" firstAttribute="top" secondItem="Q4E-L4-zZE" secondAttribute="top" id="aPn-F0-JUP"/>
+                                            <constraint firstItem="J6l-Fi-p0C" firstAttribute="top" secondItem="Q4E-L4-zZE" secondAttribute="top" id="gvL-yC-z1C"/>
+                                            <constraint firstItem="SbG-Rc-nKk" firstAttribute="leading" secondItem="Q4E-L4-zZE" secondAttribute="leading" id="vNw-P8-4mt"/>
+                                            <constraint firstAttribute="trailing" secondItem="J6l-Fi-p0C" secondAttribute="trailing" id="ybd-Rf-8dv"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ErC-WK-xzQ" secondAttribute="trailing" constant="38" id="5Vh-QM-UUf"/>
+                            <constraint firstItem="nJB-yD-cAY" firstAttribute="top" secondItem="ErC-WK-xzQ" secondAttribute="bottom" constant="24" id="7tH-0b-plw"/>
+                            <constraint firstItem="ErC-WK-xzQ" firstAttribute="leading" secondItem="N0H-4K-ZfF" secondAttribute="leading" constant="38" id="d3X-SA-mju"/>
+                            <constraint firstItem="ErC-WK-xzQ" firstAttribute="top" secondItem="Oiy-8a-F4A" secondAttribute="bottom" constant="8" id="p3b-ed-gGC"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="sV8-4z-peZ" id="OYU-E7-0vI"/>
+                        <outlet property="textView" destination="aDg-Bo-Or1" id="BBH-zM-Utl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qb0-FG-Qqz" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288.5" y="389.5"/>
         </scene>
     </scenes>
 </document>

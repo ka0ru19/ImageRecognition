@@ -14,6 +14,8 @@
 		63343F651D98388700143064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63343F631D98388700143064 /* LaunchScreen.storyboard */; };
 		63343F701D98388700143064 /* ImageRecoginationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63343F6F1D98388700143064 /* ImageRecoginationTests.swift */; };
 		63343F7B1D98388700143064 /* ImageRecoginationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63343F7A1D98388700143064 /* ImageRecoginationUITests.swift */; };
+		63343F8A1D98390D00143064 /* ImageRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63343F891D98390D00143064 /* ImageRecognition.framework */; };
+		63343F901D983B9600143064 /* ImageRecognition.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63343F891D98390D00143064 /* ImageRecognition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		63343F8C1D983B1600143064 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				63343F901D983B9600143064 /* ImageRecognition.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		63343F571D98388700143064 /* ImageRecogination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecogination.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63343F5A1D98388700143064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +62,8 @@
 		63343F761D98388700143064 /* ImageRecoginationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRecoginationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63343F7A1D98388700143064 /* ImageRecoginationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecoginationUITests.swift; sourceTree = "<group>"; };
 		63343F7C1D98388700143064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63343F891D98390D00143064 /* ImageRecognition.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageRecognition.framework; sourceTree = "<group>"; };
+		63343F8B1D9839B700143064 /* ImageRecogination-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageRecogination-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63343F8A1D98390D00143064 /* ImageRecognition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,7 @@
 				63343F6E1D98388700143064 /* ImageRecoginationTests */,
 				63343F791D98388700143064 /* ImageRecoginationUITests */,
 				63343F581D98388700143064 /* Products */,
+				63343F881D98390D00143064 /* Libs */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +116,7 @@
 		63343F591D98388700143064 /* ImageRecogination */ = {
 			isa = PBXGroup;
 			children = (
+				63343F8B1D9839B700143064 /* ImageRecogination-Bridging-Header.h */,
 				63343F5A1D98388700143064 /* AppDelegate.swift */,
 				63343F5C1D98388700143064 /* ViewController.swift */,
 				63343F5E1D98388700143064 /* Main.storyboard */,
@@ -125,6 +145,14 @@
 			path = ImageRecoginationUITests;
 			sourceTree = "<group>";
 		};
+		63343F881D98390D00143064 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				63343F891D98390D00143064 /* ImageRecognition.framework */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +163,7 @@
 				63343F531D98388700143064 /* Sources */,
 				63343F541D98388700143064 /* Frameworks */,
 				63343F551D98388700143064 /* Resources */,
+				63343F8C1D983B1600143064 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -402,10 +431,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				INFOPLIST_FILE = ImageRecogination/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.ImageRecogination;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -413,10 +450,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				INFOPLIST_FILE = ImageRecogination/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.ImageRecogination;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
